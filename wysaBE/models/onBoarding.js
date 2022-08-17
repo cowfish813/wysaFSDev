@@ -7,10 +7,10 @@ const OnBoardingSchema = Schema({
     bedTime: Date,
     startTime: Date,
     hrsOfSleep: Number,
-    userId: {
-        type: Number,
-        // require: true
-    }
+    // userId: {
+    //     type: Number,
+    //     // require: true
+    // }
 }, {timestamps: true});
 
-export const OnBoarding = mongoose.model('OnBoarding', OnBoardingSchema)
+export const OnBoarding = mongoose.model('OnBoarding', OnBoardingSchema);

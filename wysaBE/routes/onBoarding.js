@@ -17,5 +17,4 @@ router.post('/', (req, res) => {
         .catch(err => console.log(err))
 })
 
-
-export const onBoarding = router
+export const onBoarding = router;
