@@ -3,9 +3,11 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const OnBoardingSchema = Schema({
+    nickName: String,
+    // password: Password,
     sleepStruggleDuration: String,
     bedTime: Date,
-    startTime: Date,
+    wakeTime: Date,
     hrsOfSleep: Number,
     // userId: {
     //     type: Number,
