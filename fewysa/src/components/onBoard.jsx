@@ -6,10 +6,10 @@ const OnBoard = () => {
     const [wakeTime, setWakeTime] = useState('');
     const [sleepTime, setSleepTime] = useState('');
     const [hrsOfSleep, setHrsOfSleep] = useState(0);
-    const [component, setComponent] = useState(goToBed);
+    const [component, setComponent] = useState(null);
 
     useEffect(() => { //initial
-        setComponent(goToBed);
+        if (!component) setComponent(sleepStruggle);
     })
 
     const handleSubmit = e => {
@@ -22,31 +22,54 @@ const OnBoard = () => {
 
     }
 
+    const sleepStruggle = (
+        <form>
+            <div>
+                <label>Less than 2 weeks </label>
+                <input type='radio'></input>
+            </div>
+
+            <div>
+                <label>2 to 8 weeks </label>
+                <input type='radio'></input>
+            </div>
+
+            <div>
+                <label>More than 8 weeks </label>
+                <input type='radio'></input>
+            </div>
+
+            <button onClick={() => setComponent(goToBed)}>next</button>
+        </form>
+    )
+
     const goToBed = (
-        <div>
+        <form>
+            <p>What Time do you go to bed for sleep?</p>
             <input type='time' id='bedtime' onClick={handleInput} ></input>
-            <button onClick={setComponent(wakeUpTime)}>next</button>
-        </div>
+            <button onClick={() => setComponent(wakeUpTime)}>next</button>
+        </form>
     )
 
     const wakeUpTime = (
-        <div>
+        <form>
             <input type='time' id='waketime' onClick={handleInput} ></input>
-            <button onClick={setComponent(hrsSlept)}>next</button>
-        </div>
+            <button onClick={() => setComponent(hrsSlept)}>next</button>
+        </form>
     )
 
     const hrsSlept = (
-        <div>
+        <form>
             <input type="number" />
             <button>Submit</button>
-        </div>
+        </form>
     )
 
 
     return (
         <div>
             {component}
+            {/* {goToBed} */}
         </div>
     )
 }
