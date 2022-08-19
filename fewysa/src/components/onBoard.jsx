@@ -8,9 +8,9 @@ const OnBoard = () => {
     const [hrsOfSleep, setHrsOfSleep] = useState(0);
     const [component, setComponent] = useState(goToBed);
 
-    // useEffect(() => { //initial
-    //     setComponent(goToBed);
-    // })
+    useEffect(() => { //initial
+        setComponent(goToBed);
+    })
 
     const handleSubmit = e => {
         e.preventDefault();
