@@ -5,11 +5,12 @@ import { useSelector, useDispatch } from 'react-redux';
 const OnBoard = () => {
     const [wakeTime, setWakeTime] = useState('');
     const [sleepTime, setSleepTime] = useState('');
-    const [hrsOfSleep, setHrsOfSleep] = useState(0)
-    const [component, setComponent] = useState(<></>)
-    useEffect(() => { //initial
-        setComponent(goToBed);
-    })
+    const [hrsOfSleep, setHrsOfSleep] = useState(0);
+    const [component, setComponent] = useState(goToBed);
+
+    // useEffect(() => { //initial
+    //     setComponent(goToBed);
+    // })
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -38,15 +39,14 @@ const OnBoard = () => {
     const hrsSlept = (
         <div>
             <input type="number" />
+            <button>Submit</button>
         </div>
     )
 
 
     return (
-        <div>sdfgsdgdsf
-            <div>
-                {component}
-            </div>
+        <div>
+            {component}
         </div>
     )
 }
